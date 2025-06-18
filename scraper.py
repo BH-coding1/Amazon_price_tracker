@@ -35,7 +35,7 @@ class Price_Scraper:
                 price_text  = self.soup.find(name='span',class_='a-price-whole').text
                 self.price_symbol = self.soup.find(name='span',class_='a-price-symbol').text
                 self.price= price_text.split(',')[0]
-                self.title = self.soup.find(name='title').text
+                self.title_ = self.soup.find(name='Title')
                 return
         print('Too many attempts made !')
         return
@@ -43,7 +43,7 @@ class Price_Scraper:
     def price_symbol(self):
         return self.price_symbol
     def item_name(self):
-        return self.title.split(':')[0]
+        return self.title_.split(':')[0]
     def price(self):
         return self.price
 

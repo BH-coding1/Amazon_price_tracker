@@ -26,7 +26,7 @@ class Email:
             with smtplib.SMTP(os.environ.get('smtp_server')) as email_connection :
                 email_connection.starttls()
                 email_connection.login(user = self.email,password=os.getenv('email_app_password'))
-                email_connection.sendmail(msg=f'Subject:Amazon price tracker\n\n{self.body}',to_addrs='lospollos313@gmail.com',from_addr=self.email)
+                email_connection.sendmail(msg=f'Subject:Amazon price tracker\n\n{self.body}',to_addrs='',from_addr=self.email)
 
         else:
             print('Price has not dropped yet')
